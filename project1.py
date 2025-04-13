@@ -4,7 +4,6 @@ from aiogram.types import Message
 from aiogram.filters import Command
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-TOKEN_API = "7645666392:AAG7AieA0OBHQBsV4dOkgamImOzyr2rCAoM"
 
 
 bot = Bot(TOKEN_API,
