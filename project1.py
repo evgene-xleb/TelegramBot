@@ -1,8 +1,10 @@
+
 #Библеотеки для безопасности токена / A library for token security
 import os
 from dotenv import load_dotenv
 
 #Библеотеки для работы с ботом / Libraries for working with the bot
+
 import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
@@ -10,8 +12,10 @@ from aiogram.filters import Command
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
+
 load_dotenv()
 TOKEN_API = os.getenv("BOT_TOKEN")
+
 
 bot = Bot(token= TOKEN_API,
           default = DefaultBotProperties(parse_mode=ParseMode.HTML)
@@ -48,3 +52,4 @@ async def start():
 
 if __name__ == "__main__":
     asyncio.run(start())
+
