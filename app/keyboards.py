@@ -3,14 +3,20 @@ from aiogram.types import (ReplyKeyboardMarkup, KeyboardButton,
 
 from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
 
-main = ReplyKeyboardMarkup(keyboard=[
-    [KeyboardButton(text='Заниматься'), KeyboardButton(text='Закончить занятие')],#когда указываеться в одну строку это значит что кнопки в одну линию
-    [KeyboardButton(text='Повторить материал')],
-    [KeyboardButton(text='Подписка')],
-],
-            resize_keyboard=True,
-            input_field_placeholder='Выберите пункт меню.'
-)
+# main = ReplyKeyboardMarkup(keyboard=[
+#     [KeyboardButton(text='Заниматься'), KeyboardButton(text='Закончить занятие')],#когда указываеться в одну строку это значит что кнопки в одну линию
+#     [KeyboardButton(text='Повторить материал')],
+#     [KeyboardButton(text='Подписка')],
+# ],
+#             resize_keyboard=True,
+#             input_field_placeholder='Выберите пункт меню.'
+# )
+
+main = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="Каталог", callback_data='catalog')],
+    [InlineKeyboardButton(text="Корзина", callback_data='basket'),
+     InlineKeyboardButton(text="Контакты", callback_data="contacs")],
+])
 
 
 settings = InlineKeyboardMarkup(inline_keyboard=[
@@ -26,3 +32,4 @@ async def inline_cars():
     for car in cars:
         keyboard.add(InlineKeyboardButton(text=car , url="https://kolesa.kz/"))
     return keyboard.adjust(1).as_markup()
+
